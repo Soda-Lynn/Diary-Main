@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:image" content="{{ page.image }}">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; color: #333; text-align: justify; }
+        nav { background: #222; padding: 1rem; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 800px; margin: auto; display: flex; justify-content: space-between; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; margin-left: 15px; }
+        article { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        h1 { font-size: 2.5rem; color: #111; text-align: left; }
+        .meta { color: #888; margin-bottom: 20px; text-align: left; }
+        img, video { max-width: 100%; border-radius: 8px; margin: 20px 0; }
+        figcaption { text-align: center; color: #666; font-style: italic; font-size: 0.9em; }
+        blockquote { border-left: 5px solid #eee; padding-left: 20px; font-style: italic; color: #555; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="/">Home</a>
+        <div>
+            <a href="/admin">Team</a>
+            <a href="/contact">Submissions</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+</nav>
+
+<article>
+    <h1>{{ page.title }}</h1>
+    <div class="meta">By {{ page.author }} | {{ page.date | date: "%B %d, %Y" }}</div>
+    
+    {{ content }}
+</article>
+
+</body>
+</html>
